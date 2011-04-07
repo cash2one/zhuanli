@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>主页模板</title>
+<link href="cssstyle.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+
+<div id="Logo"><a href="#" id="logolink"></a>
+
+<div id="login"> 
+    <form id="lzform" name="lzform" method="post" action=""> 
+        <fieldset> 
+            <div id="item"> 
+                <label for="form_username">用户名: </label> 
+                <input type="text" name="form_username" id="form_username" value="" tabindex="1"/> 
+                <a href="#">注册</a>
+            </div> 
+            <div id="item"> 
+                <label for="form_password">密&nbsp;&nbsp;&nbsp;&nbsp;码: </label> 
+                <input name="form_password" id="form_password" class="text" type="password" tabindex="2"/> 
+                <a href="#">忘记密码</a> 
+            </div> 
+            <div id="item1"> 
+                <label for="form_remember"><input name="remember" type="checkbox" id="form_remember" tabindex="3"/> 
+                记住我</label>                  
+            </div> 
+            <div id="item1"> 
+                <input type="image" name="imageField" src="images/sy01_32.jpg" />
+            </div> 
+        </fieldset> 
+    </form> 
+    <script type=""> 
+    if($("#form_username").val()){
+        $("#form_password").focus();
+    } else {
+        $("#form_username").focus();
+    }
+    </script> 
+</div> 
+
+</div>
+
+<div id="Nav">
+<ul>
+<li><a href="#">首页</a></li>
+<li><a href="#">技术推广</a></li>
+<li><a href="#">技术需求</a></li>
+<li><a href="#">视频</a></li>
+<li><a href="#">专利讲堂</a></li>
+</ul>
+</div>
+
+<div id="Content">
+
+<div id="ContentL">
+
+<div id="subContentL">
+<h1>最新发布 </h1>
+<h2>推荐标题一</h2>
+<p>空间爱开房间卡健康房间啊飞</p>
+<h2>推荐标题二</h2>
+<p>咖啡加按揭开放将咖啡金卡及发掘疯狂解放军阿克苏房间阿克纠纷</p>
+</div>
+
+<div id="subContentL">
+<h1>专利讲堂 </h1>
+<h2>推荐标题一</h2>
+<p>空间爱开房间卡健康房间啊飞</p>
+<h2>推荐标题二</h2>
+<p>咖啡加按揭开放将咖啡金卡及发掘疯狂解放军阿克苏房间阿克纠纷</p>
+</div>
+
+</div>
+
+<div id="ContentR">
+
+<div id="subContentR">
+<div id="itemname">技术推广</div>
+
+<div id="contentRclass">
+<ul>
+<li><p><a href="#">列表内容一</a></p></li>
+<li><p><a href="#">列表内容二</a></p></li>
+<li><p><a href="#">列表内容三</a></p></li>
+</ul>
+</div>
+
+<div id="contentRclass">
+<ul>
+<li><p><a href="#">列表内容一</a></p></li>
+<li><p><a href="#">列表内容二</a></p></li>
+<li><p><a href="#">列表内容三</a></p></li>
+</ul>
+</div>
+
+<div id="contentRclass">
+<ul>
+<li><p><a href="#">列表内容一</a></p></li>
+<li><p><a href="#">列表内容二</a></p></li>
+<li><p><a href="#">列表内容三</a></p></li>
+</ul>
+</div>
+
+<div id="contentRclass">
+<ul>
+<li><p><a href="#">列表内容一</a></p></li>
+<li><p><a href="#">列表内容二</a></p></li>
+<li><p><a href="#">列表内容三</a></p></li>
+</ul>
+</div>
+</div>
+
+
+<div id="subContentR">
+<div id="itemname">技术需求</div>
+
+<div id="contentRclass">
+<ul>
+<li><p><a href="#">列表内容一</a></p></li>
+<li><p><a href="#">列表内容二</a></p></li>
+<li><p><a href="#">列表内容三</a></p></li>
+</ul>
+</div>
+
+</div>
+
+<div id="subContentR">
+<div id="itemname">专利视频</div>
+
+<div id="contentRclass">
+<ul>
+<li><p><a href="#">列表内容一</a></p></li>
+<li><p><a href="#">列表内容二</a></p></li>
+<li><p><a href="#">列表内容三</a></p></li>
+</ul>
+</div>
+</div>
+
+
+</div>
+
+</div>
+
+<div id="Content">
+此处放图片</div>
+
+<div id="Footer">
+<p>版权归miaomiaomiao所有</p>
+</div>
+
+</body>
+
+</html>

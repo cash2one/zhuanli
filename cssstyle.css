@@ -1,0 +1,275 @@
+﻿/*各页面公共部分：logo，导航条*/
+body,div,a,img,p,form,h1,h2,h3,h4,h5,h6,input,textarea,ul,li,dt,dt,dl {
+				margin:0;padding:0;
+}
+
+#Logo,#Nav,#Content,#Footer {
+				width:900px;margin:0 auto;
+}
+
+/*logo*/
+#Logo {
+				height:80px;
+				background:gray;
+				margin-top:20px;
+}
+ 
+#logolink {
+				display:block;
+				width:200px;
+				height:80px;
+				background:blue;
+				float:left;
+}
+
+/*登录注册*/
+#login{
+				width:300px;
+				float:right;			
+}
+
+#login #item1{
+				float:left;
+				font-size:16px;
+				font-family:宋体, Arial, Helvetica, sans-serif;
+				color:black;
+				width:100px;
+				line-height:26px;
+}
+
+/*导航条*/
+#Nav {
+				height:43px;
+}
+
+#Nav ul {
+				height:43px;
+				list-style:none;
+				background:#56990c;
+}
+
+#Nav ul li {
+				height:43px;
+				float:left;
+}
+
+#Nav ul li a {
+				display:block;
+				height:43px;
+				color:#FFF;
+				padding:0 10px;
+				line-height:43px;
+				font-size:14px;
+				font-weight:bold;
+				font-family:宋体, Arial, Helvetica, sans-serif;
+				text-decoration:none;				
+				float:left;
+}
+
+#Nav ul li a:hover{
+				background:maroon;
+}
+
+/*主页： Content, ContentL, ContentR, Footer*/
+#Content #ContentL,#Content #ContentR {
+				float:left;padding:15px;
+}
+
+/*ContentL*/
+#Content #ContentL {
+				width:270px;
+				background:silver;
+}
+
+#Content #ContentL #subContentL{
+				border-bottom:2px gray solid;
+}
+
+#Content #ContentL h1 {
+				height:40px;
+				line-height:40px;
+				font-size:16px;
+				color:blue;
+				border-bottom:1px maroon solid;
+				margin-bottom:10px;
+}
+
+#Content #ContentL h2 {
+				height:25px;
+				line-height:25px;
+				font-size:14px;
+				color:black;
+				border-bottom:1px gray dashed;
+				margin-bottom:10px;
+}
+
+/*ContentR*/
+#Content #ContentR {
+				width:570px;
+}
+
+#Content #ContentR #subContentR{
+				
+}
+
+#Content #ContentR #subContentR #itemname{
+				height:25px;
+				line-height:25px;
+				font-size:14px;
+				color:black;
+				margin-bottom:10px;
+				background:gray;
+				clear:both;
+}
+
+#Content #ContentR #subContentR #contentRclass{
+				width:260px;
+				float:left;
+				border:1px blue solid;
+				margin:10px;
+}
+
+#Content #ContentR #subContentR #contentRclass ul{
+				list-style:none;
+}
+
+#Content #ContentR h1 {
+				height:40px;
+				line-height:40px;
+				font-size:16px;
+				color:black;
+				border-bottom:1px maroon dashed;
+				margin-bottom:5px;
+}
+
+#Content #ContentR h2 {
+				height:25px;
+				line-height:25px;
+				font-size:12px;
+				color:black;
+				margin-bottom:5px;
+}
+
+
+
+#Content #ContentL p{
+				font-size:12px;
+				line-height:20px;
+				text-indent:2em;
+}
+
+#Footer{
+				text-align:center;
+				background:olive;
+				padding:10px 0;
+				font-size:12px;
+				font-family:宋体, Arial, Helvetica, sans-serif;
+				color:black;
+				line-height:20px;
+}
+
+#Content #ContentR #class{
+				}
+
+#Content #ContentR #class #subclass{
+				width:265px;
+}
+
+#Content #ContentR #class #subclass ul{
+				height:20px;
+				list-style:none;
+}
+
+#Content #ContentR #class #subclass ul li{
+				height:20px;
+				float:left;
+}
+
+#Content #ContentR #class #subclass ul li a {
+				display:block;
+				height:20px;
+				color:black;
+				padding:0 4px;
+				line-height:20px;
+				font-size:12px;
+				font-family:宋体, Arial, Helvetica, sans-serif 
+				float:left;
+}
+
+#Content #ContentR #class #subclass ul li a:hover{
+				color:maroon;
+}
+
+/*列表页： 列表项目*/
+.seprate {
+				width:1px;height:8px;background:black;
+}
+
+#subnav{
+				height:20px;
+				font-size:12px;
+				font-family:宋体, Arial, Helvetica, sans-serif;
+				color:teal;
+				line-height:20px;
+				padding:5px 0;
+				text-align:left;
+				
+}
+
+#listitems{
+				background:silver;
+}
+
+#listitems h1{
+				font-size:18px;
+				font-family:宋体, Arial, Helvetica, sans-serif;
+				height:30px;
+				line-height:30px;
+				margin-bottom:5px;
+				margin-left:15px;
+}
+
+/*内容页*/
+#textcontent h1{
+				font-size:18px;
+				font-family:宋体, Arial, Helvetica, sans-serif;
+				height:30px;
+				line-height:30px;
+				margin-bottom:10px;
+				text-align:center;
+				border-bottom:1px maroon solid;
+}
+
+#textcontent p{
+				font-size:12px;
+				font-family:宋体, Arial, Helvetica, sans-serif;
+				height:20px;
+				line-height:20px;
+				margin-bottom:5px;
+				text-indent:2em;
+}
+
+#textcontent table{
+				border-style:solid;
+				border-width:1px;
+				border-color:black;
+				/*border-collapse:collapse;*/
+				width:850px;
+				margin:0px auto;
+}
+
+#textcontent th,#textcontent td{
+				text-align:center;
+				padding:2px;
+				border-style:solid;
+				border-width:1px;
+				border-color:black;
+}
+
+#textcontent th{
+				width:200px;
+}
+
+#textcontent td{
+				width:650px;				
+}

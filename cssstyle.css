@@ -3,6 +3,10 @@ body,div,a,img,p,form,h1,h2,h3,h4,h5,h6,input,textarea,ul,li,dt,dt,dl {
 				margin:0;padding:0;
 }
 
+body{
+				background:#F8F8F8;
+}
+
 #Logo,#Nav,#Content,#Footer,#SearchContent{
 				width:900px;margin:0 auto;
 }
@@ -10,7 +14,7 @@ body,div,a,img,p,form,h1,h2,h3,h4,h5,h6,input,textarea,ul,li,dt,dt,dl {
 /*logo*/
 #Logo {
 				height:80px;
-				background:gray;
+				background:#D4E6FC;
 				margin-top:20px;
 }
  
@@ -18,7 +22,6 @@ body,div,a,img,p,form,h1,h2,h3,h4,h5,h6,input,textarea,ul,li,dt,dt,dl {
 				display:block;
 				width:200px;
 				height:80px;
-				background:blue;
 				float:left;
 }
 
@@ -45,7 +48,7 @@ body,div,a,img,p,form,h1,h2,h3,h4,h5,h6,input,textarea,ul,li,dt,dt,dl {
 #Nav ul {
 				height:43px;
 				list-style:none;
-				background:#56990c;
+				background:#60B8FF;
 }
 
 #Nav ul li {
@@ -67,12 +70,16 @@ body,div,a,img,p,form,h1,h2,h3,h4,h5,h6,input,textarea,ul,li,dt,dt,dl {
 }
 
 #Nav ul li a:hover{
-				background:maroon;
+				background:#D0D0D0;
 }
 
 /*主页： Content, ContentL, ContentR, Footer*/
+#Content{
+				background:#FFF;
+}
+
 #SearchContent{
-				background:teal;
+				background:#D4E6FC;
 }
 
 #SearchContent #searchnav{
@@ -86,7 +93,7 @@ body,div,a,img,p,form,h1,h2,h3,h4,h5,h6,input,textarea,ul,li,dt,dt,dl {
 /*ContentL*/
 #Content #ContentL {
 				width:270px;
-				background:silver;
+				background:#F0F0F0;
 }
 
 #Content #ContentL #subContentL{
@@ -127,7 +134,7 @@ body,div,a,img,p,form,h1,h2,h3,h4,h5,h6,input,textarea,ul,li,dt,dt,dl {
 				font-size:14px;
 				color:black;
 				margin-bottom:10px;
-				background:gray;
+				background:#F0F0F0;
 				clear:both;
 }
 
@@ -169,7 +176,7 @@ body,div,a,img,p,form,h1,h2,h3,h4,h5,h6,input,textarea,ul,li,dt,dt,dl {
 
 #Footer{
 				text-align:center;
-				background:olive;
+				background:#D4E6FC;
 				padding:10px 0;
 				font-size:12px;
 				font-family:宋体, Arial, Helvetica, sans-serif;

@@ -13,7 +13,7 @@ body{
 
 /*logo*/
 #Logo {
-				height:80px;
+				height:100px;
 				background:#D4E6FC;
 				margin-top:20px;
 }
@@ -21,14 +21,16 @@ body{
 #logolink {
 				display:block;
 				width:200px;
-				height:80px;
+				height:100px;
 				float:left;
+				background:url(logo.png)
 }
 
 /*登录注册*/
 #login{
 				width:300px;
-				float:right;			
+				float:right;
+				margin-top:10px;			
 }
 
 #login #item1{

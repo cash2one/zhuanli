@@ -24,7 +24,7 @@ body{
 				height:100px;
 				float:left;
 				margin-top:10px;
-				background:url(logo.png)
+				background:url(../images/logo.png) no-repeat;
 }
 
 /*登录注册*/

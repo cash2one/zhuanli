@@ -3,7 +3,7 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>内容模板!!</title>
+<title>内容模板</title>
 <link href="cssstyle.css" rel="stylesheet" type="text/css"/>
 </head>
 
@@ -18,6 +18,7 @@
 <li><a href="#">帮助</a></li>
 </ul>
 </div>
+
 <div id="Content">
 
 <div id="subnav">当前位置：</div>
@@ -25,13 +26,131 @@
 <div id="textcontent">
 <h1>专利信息发布单</h1>
 <p>文章内容</p>
-<table>
+
+<form action="add_zhuan.asp" method="post" name="form1">
+<table width="95%" border="0" cellpadding="3" cellspacing="1"> 
+        
 <tr>
-<th>【申请号】</th>
-<td>1233444</td>
+<td colspan="2" class="unnamed21">－－－－免费发布－－－－－</td>
 </tr>
-<tr><th>技术名称</th><td>我的技术专利</td></tr>
+
+<tr>
+<td>技术领域：</td>
+<td><select name="jishulingyu">
+<option value="" selected="selected">请选择技术领域</option>
+<option value="1">农业</option>
+<option value="2">食品、粮油、饮料</option>
+<option value="3">医疗卫生、保健</option>
+<option value="4">轻工日用</option>
+<option value="5">文教、体育、娱乐</option>
+<option value="6">家用电器</option>
+<option value="7">电子、电器、测试</option>
+<option value="8">通讯、计算机</option>
+<option value="9">化学化工、石油、冶金</option>
+<option value="10">机械、加工、设备</option>
+<option value="11">建筑、建材</option>
+<option value="12">能源、采暖、炉灶</option>
+<option value="13">交通、车辆、运输</option>
+<option value="14">造纸、纺织、服装</option>
+<option value="15">环保、除尘、采矿</option>
+<option value="16">其它</option>
+</select>
+<span class="spanstyle2">*</span></td>
+</tr>
+
+<tr>
+<td>专利名称：</td>
+<td><input name="guanjianci" type="text" size="30"/>
+<span class="spanstyle2">*</span></td>
+</tr>
+
+<tr>
+<td>专利号：</td>
+<td><input type="text" name="zhuanlihao"/>
+<span class="spanstyle2">*</span></td>
+</tr>
+
+<tr>
+<td>企业名称：</td>
+<td><input name="mingcheng" type="text" size="30"/>（注：如无企业名称，请不要填写任何内容</td>
+</tr>
+
+<tr>
+<td>描述</td>
+<td><textarea name="miaoshu" style="width: 89%; height: 200px;"></textarea>
+<span class="spanstyle">*</span></td>
+</tr>
+
+<tr>
+<td>通讯地址：</td>
+<td><input name="dizhi" type="text" size="50"/>
+<span class="spanstyle">*</span></td>
+</tr>
+
+<tr>
+<td>状态：</td>
+<td><span class="spanstyle2">
+<input type="radio" name="zhuangtai1" value="研发阶段"/>研发阶段</span>
+<input type="radio" name="zhuangtai1" value="初试阶段"/>初试阶段
+<input type="radio" name="zhuangtai1" value="中试阶段"/>中试阶段
+<input type="radio" name="zhuangtai1" value="批量生产"/>批量生产
+<span class="spanstyle">*</span></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+<td><span class="spanstyle">
+<input type="checkbox" name="zhuangtai2" value="待转让"/>待转让
+<input type="checkbox" name="zhuangtai2" value="已转让"/>已转让
+<input type="checkbox" name="zhuangtai2" value="自己已实施"/>自己已实施
+<input type="checkbox" name="zhuangtai2" value="有样品或模型"/>有样品或模型
+<input type="checkbox" name="zhuangtai2" value="有专业录像带或光盘"/>有专业录像带或光盘
+*</span></td>
+</tr>
+
+<tr>
+<td>发明人：</td>
+<td><input name="famingren" type="text" size="20"/>
+<span class="STYLE6">*</span></td>
+</tr>
+
+<tr>
+<td>联系人：</td>
+<td><input type="text" name="lianxiren"/>
+<span class="STYLE6">*</span></td>
+</tr>
+
+<tr>
+<td>电话：</td>
+<td><input type="text" name="dianhua"/>
+<span class="spanstyle2">*</span></td>
+</tr>
+
+<tr >
+<td>EMAIL：</td>
+<td><input type="text" name="email"/></td>
+</tr>
+
+<tr>
+<td>传真：</td>
+<td><input type="text" name="chuanzhen"/></td>
+</tr>
+
+<tr>
+<td>网址：</td>
+<td><input type="text" name="wangzhi"/></td>
+</tr>
+
+<tr align="center">
+<td colspan="2"><input type="button" name="Submit" value="提交" onclick="check()"/>
+<input type="reset" name="Submit2" value="重置"/>
+<input type="hidden" name="shifoutuijian" value="是"/>
+<input name="shifoufabu" type="hidden" value="是"/>
+<input name="leibie" type="hidden" value="专利产品"/></td>
+</tr>
 </table>
+</form>
+
 </div>
 
 </div>

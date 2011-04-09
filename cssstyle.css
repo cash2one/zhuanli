@@ -3,7 +3,7 @@ body,div,a,img,p,form,h1,h2,h3,h4,h5,h6,input,textarea,ul,li,dt,dt,dl {
 				margin:0;padding:0;
 }
 
-#Logo,#Nav,#Content,#Footer {
+#Logo,#Nav,#Content,#Footer,#SearchContent{
 				width:900px;margin:0 auto;
 }
 
@@ -71,6 +71,14 @@ body,div,a,img,p,form,h1,h2,h3,h4,h5,h6,input,textarea,ul,li,dt,dt,dl {
 }
 
 /*主页： Content, ContentL, ContentR, Footer*/
+#SearchContent{
+				background:teal;
+}
+
+#SearchContent #searchnav{
+				margin-left:100px;
+}
+
 #Content #ContentL,#Content #ContentR {
 				float:left;padding:15px;
 }
@@ -106,10 +114,11 @@ body,div,a,img,p,form,h1,h2,h3,h4,h5,h6,input,textarea,ul,li,dt,dt,dl {
 /*ContentR*/
 #Content #ContentR {
 				width:570px;
+				padding-top:0;
 }
 
-#Content #ContentR #subContentR{
-				
+#Content #ContentR #subContentR ul{
+				list-style:none;
 }
 
 #Content #ContentR #subContentR #itemname{

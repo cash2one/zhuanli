@@ -1,9 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>测试主页模板</title>
+<title>主页模板</title>
 <link href="cssstyle.css" rel="stylesheet" type="text/css"/>
 </head>
 
@@ -52,6 +52,39 @@
 <li><a href="#">视频</a></li>
 <li><a href="#">专利讲堂</a></li>
 </ul>
+</div>
+
+<div id="SearchContent">
+<div id="searchnav">
+<a href="#" onclick="showLabel(this);return false;" id="nav_all">全部</a>　　
+<a href="#" onclick="showLabel(this);return false;" id="nav_publish">发布</a>　　
+<a href="#" onclick="showLabel(this);return false;" id="nav_require">需求</a></div>
+
+<div id="search">
+<form action="" method="post" name="search_web" id="search_all" style="margin:0" target="_blank">
+<input class="bjbiaodan" type="text" size="78" name="str_key" value="全部" onfocus="if (value =='全部'){value =''}" onblur="if (value ==''){value='网页'}"/>　
+<input name="imageField" type="image" src="images/sy01_99.jpg"/>
+<input name="web_name" type="hidden" id="web_name" value="baidu"/>
+<input name="flag" type="hidden" id="flag" value="baidu"/>
+</form>
+
+<form action="search/search.asp?str=go" method="post" name="search_publish" id="search_photo" style="display:none;margin:0" target="_blank">
+<input class="bjbiaodan" type="text" size="78" name="str_key" value="发布" onfocus="if (value =='发布'){value =''}" onblur="if (value ==''){value='新闻'}"/>　
+<input name="imageField" type="image" src="images/sy01_99.jpg" />
+<input name="web_name" type="hidden" id="web_name" value="news"/>
+<input name="flag" type="hidden" id="flag" value="zhuanli"/>
+</form>
+
+<form action="search/search.asp?str=go" method="post" name="search_require" id="search_music" style="display:none;margin:0" target="_blank">
+<input class="bjbiaodan" type="text" size="78" name="str_key" value="需求" onfocus="if (value =='需求'){value =''}" onblur="if (value ==''){value='专利信息'}"/>　
+<input name="imageField" type="image" src="images/sy01_99.jpg" />
+<input name="web_name" type="hidden" id="web_name" value="zhuanli"/>
+<input name="flag" type="hidden" id="flag" value="zhuanli"/>
+</form>
+
+</div>
+
+
 </div>
 
 <div id="Content">

@@ -23,8 +23,7 @@ body{
 				width:200px;
 				height:100px;
 				float:left;
-				background:url(logo.png);
-				margin-top:10px;
+				background:url(logo.png)
 }
 
 /*登录注册*/

@@ -25,19 +25,36 @@
 
 <div id="textcontent">
 <h1>专利信息发布单</h1>
-<p>文章内容</p>
 
 <form action="add_zhuan.asp" method="post" name="form1">
-<table width="95%" border="0" cellpadding="3" cellspacing="1"> 
+<table width="95%" border="0" cellpadding="3" cellspacing="1" style= "border-collapse:collapse "> 
         
 <tr>
-<td colspan="2" class="unnamed21">－－－－免费发布－－－－－</td>
+<td colspan="2" class="infopublish"></td>
 </tr>
 
 <tr>
-<td>技术领域：</td>
+<td>申请号</td>
+<td><input name="patentnumber" type="text" size="30"/>
+<span class="spanstyle2">*</span></td>
+</tr>
+
+<tr>
+<td>专利名称</td>
+<td><input name="patentname" type="text" size="30"/>
+<span class="spanstyle2">*</span></td>
+</tr>
+
+<tr>
+<td>专利类型</td>
+<td><input type="text" name="patenttype"/>
+<span class="spanstyle2">*</span></td>
+</tr>
+
+<tr>
+<td>行业分类：</td>
 <td><select name="jishulingyu">
-<option value="" selected="selected">请选择技术领域</option>
+<option value="" selected="selected">请选择行业分类</option>
 <option value="1">农业</option>
 <option value="2">食品、粮油、饮料</option>
 <option value="3">医疗卫生、保健</option>
@@ -59,33 +76,59 @@
 </tr>
 
 <tr>
-<td>专利名称：</td>
-<td><input name="guanjianci" type="text" size="30"/>
-<span class="spanstyle2">*</span></td>
+<td>要解决的技术问题和<br/>有益效果（限80字）</td>
+<td><textarea name="effect" style="width: 89%; height: 80px;"></textarea></td>
 </tr>
 
 <tr>
-<td>专利号：</td>
-<td><input type="text" name="zhuanlihao"/>
-<span class="spanstyle2">*</span></td>
-</tr>
-
-<tr>
-<td>企业名称：</td>
-<td><input name="mingcheng" type="text" size="30"/>（注：如无企业名称，请不要填写任何内容</td>
-</tr>
-
-<tr>
-<td>描述</td>
-<td><textarea name="miaoshu" style="width: 89%; height: 200px;"></textarea>
+<td>技术方案（限300字）</td>
+<td><textarea name="design" style="width: 89%; height: 200px;"></textarea>
 <span class="spanstyle">*</span></td>
 </tr>
 
+
 <tr>
-<td>通讯地址：</td>
+<td>Z－用途或技术领域（限1句话概括）：</td>
+<td><input name="mingcheng" type="text" size="30"/></td>
+</tr>
+
+
+<tr>
+<td>附图1<br/>（首选最能体现技术方案的图）：</td>
 <td><input name="dizhi" type="text" size="50"/>
 <span class="spanstyle">*</span></td>
 </tr>
+
+<tr>
+<td>附图2</td>
+<td><input name="dizhi" type="text" size="50"/>
+</td>
+</tr>
+
+<tr>
+<td style="height: 1px">附图3</td>
+<td style="height: 1px"><input name="dizhi" type="text" size="50"/></td>
+</tr>
+
+<tr>
+<td>关键词</td>
+<td><input name="dizhi" type="text" size="50"/>
+<span class="spanstyle">*</span></td>
+</tr>
+
+<tr>
+<td>分类号（见专利公开文本右上角）：</td>
+<td><input name="dizhi" type="text" size="50"/>
+<span class="spanstyle">*</span></td>
+</tr>
+
+<tr>
+<td>专利pdf文本上传</td>
+<td><input name="dizhi" type="text" size="50"/>
+<span class="spanstyle">*</span></td>
+</tr>
+
+
 
 <tr>
 <td>状态：</td>
@@ -141,8 +184,8 @@
 <td><input type="text" name="wangzhi"/></td>
 </tr>
 
-<tr align="center">
-<td colspan="2"><input type="button" name="Submit" value="提交" onclick="check()"/>
+<tr>
+<td colspan="2" class="submit"><input type="button" name="Submit" value="提交" onclick="check()"/>
 <input type="reset" name="Submit2" value="重置"/>
 <input type="hidden" name="shifoutuijian" value="是"/>
 <input name="shifoufabu" type="hidden" value="是"/>

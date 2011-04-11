@@ -81,6 +81,54 @@ body{
 				background:#FFF;
 }
 
+#Content #contentname{
+				background:#F0F0F0;
+				font-size:16px;
+				font-family:宋体, Arial, Helvetica, sans-serif;
+				height:20px;
+				line-height:20px;
+				padding:0,10px;
+				font-weight:bold;
+				color:teal;
+}
+
+#Content #listnav{
+				height:80px;
+				
+}
+
+#Content #listnav ul {
+				height:80px;
+				list-style:none;
+				background:#60B8FF;
+				padding:0px;
+}
+
+#Content #listnav ul li {
+				height:16px;
+				float:left;
+}
+
+#Content #listnav ul li a {
+				display:block;
+				height:16px;
+				width:140px;
+				color:#FFF;
+				padding:0 25px;
+				line-height:16px;
+				font-size:13px;
+				font-weight:bold;
+				font-family:宋体, Arial, Helvetica, sans-serif;
+				text-decoration:none;				
+				float:left;
+				margin-top:5px;
+}
+
+#Content #listnav ul li a:hover{
+				background:#D0D0D0;
+}
+
+
 #SearchContent{
 				background:#D4E6FC;
 }
@@ -147,6 +195,13 @@ body{
 				border:1px blue solid;
 				margin:10px;
 }
+
+#Content #ContentR #subContentR #contentRclass #classname{
+				width:260px;
+				background:teal;
+				margin-bottom:4px;
+}
+
 
 #Content #ContentR #subContentR #contentRclass ul{
 				list-style:none;
@@ -278,7 +333,7 @@ body{
 }
 
 #textcontent th,#textcontent td{
-				text-align:center;
+				text-align:left;
 				padding:2px;
 				border-style:solid;
 				border-width:1px;
@@ -291,4 +346,19 @@ body{
 
 #textcontent td{
 				width:650px;				
+}
+
+#textcontent td.infopublish{
+				text-align:center;
+				font-size:14px;
+				font-family:宋体, Arial, Helvetica, sans-serif;
+				height:20px;
+				line-height:20px;
+				background:silver;
+}
+
+#textcontent td.submit{
+				text-align:center;
+				width:100%;
+				
 }

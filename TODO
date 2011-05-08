@@ -1,0 +1,43 @@
+btree 阅读
+doubanfs
+
+pidgin插件
+python web开发
+cms学习
+oj练习
+
+
+已经完成的工作
+修改
+user.php变成只有一个会员组
+修改
+e/data/template/cp_1.php
+修改了模板
+
+在栏目中关闭投稿权限
+
+增加投稿选项中，去除除了专利以外的所有内容
+增加where mid=9
+修改的文件包括
+cp_1.php
+template下的
+Changeclass.php
+Addinfo.php
+Doinfo.php
+和
+data/html/list/qlistinfo.php
+
+据说删除e/web可以关闭rss功能
+在公共模板，js调用登陆模板里面删除我的空间
+在e/template/member/cp.php
+里面删除我的空间
+
+修改公共模板里面控制面板中的内容，去掉不用的部分
+去掉购物车等等
+
+修改了内容模板，可以显示图片了
+
+修改模型，让pdf可以在内容模板里看到
+修改内容模板，增加pdf下载
+
+搜索模板在公共模板中

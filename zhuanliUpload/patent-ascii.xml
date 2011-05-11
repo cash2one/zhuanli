@@ -1,36 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <patent>
   <title>
-    标题
+	  title
   </title>
   <application_number>
-    申请号
+	  app_num
   </application_number>
   <tech_name>
-    技术名称
+	  tech name
   </tech_name>
   <patent_type>
-    专利类型
+	  patent type
   </patent_type>
   <problem_solved>
-	  要解决的技术问题
+	  problme
   </problem_solved>
   <patent_solution>
-    技术方案
+	  sulution
   </patent_solution>
   <keywords>
-    关键词
+	  lego
   </keywords>
   <patent_usage_field>
-    用途或技术领域
+	  usage
   </patent_usage_field>
   <patent_pic1file>
-    附图1
   </patent_pic1file>
   <patent_pic2file>
-    附图2
   </patent_pic2file>
   <type_number>
-	  number
+	  asdf
   </type_number>
 </patent>

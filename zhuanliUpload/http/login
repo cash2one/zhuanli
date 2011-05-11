@@ -1,0 +1,14 @@
+POST /e/enews/index.php HTTP/1.1
+Host: zhuanli.gotoip3.com
+Connection: keep-alive
+Referer: http://zhuanli.gotoip3.com/
+Content-Length: 88
+Cache-Control: max-age=0
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US) AppleWebKit/534.16 (KHTML, like Gecko) Chrome/10.0.648.205 Safari/534.16
+Content-Type: application/x-www-form-urlencoded
+Accept: application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: en-US,zh-CN;q=0.8,en;q=0.6,en-GB;q=0.4
+Accept-Charset: UTF-8,*;q=0.5
+
+enews=login&ecmsfrom=9&username=zhangdongmao&password=89714942&Submit=%E7%99%BB%E9%99%86

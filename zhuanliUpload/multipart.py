@@ -1,22 +1,22 @@
 import httplib, mimetypes, mimetools, urllib2, cookielib
-
-cj = cookielib.CookieJar()
-opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj))
-urllib2.install_opener(opener)
-
-def post_multipart(host, selector, fields, files):
-    """
-    Post fields and files to an http host as multipart/form-data.
-    fields is a sequence of (name, value) elements for regular form fields.
-    files is a sequence of (name, filename, value) elements for data to be uploaded as files
-    Return the server's response page.
-    """
-    content_type, body = encode_multipart_formdata(fields, files)
-    headers = {'Content-Type': content_type,
-               'Content-Length': str(len(body))}
-    r = urllib2.Request("http://%s%s" % (host, selector), body, headers)
-    return urllib2.urlopen(r).read()
-
+#
+#cj = cookielib.CookieJar()
+#opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj))
+#urllib2.install_opener(opener)
+#
+#def post_multipart(host, selector, fields, files):
+#    """
+#    Post fields and files to an http host as multipart/form-data.
+#    fields is a sequence of (name, value) elements for regular form fields.
+#    files is a sequence of (name, filename, value) elements for data to be uploaded as files
+#    Return the server's response page.
+#    """
+#    content_type, body = encode_multipart_formdata(fields, files)
+#    headers = {'Content-Type': content_type,
+#               'Content-Length': str(len(body))}
+#    r = urllib2.Request("http://%s%s" % (host, selector), body, headers)
+#    return urllib2.urlopen(r).read()
+#
 def encode_multipart_formdata(fields, files):
     """
     fields is a sequence of (name, value) elements for regular form fields.

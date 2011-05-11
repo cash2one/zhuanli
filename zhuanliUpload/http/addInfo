@@ -1,0 +1,86 @@
+POST /e/DoInfo/ecms.php HTTP/1.1
+Host: zhuanli.gotoip3.com
+Connection: keep-alive
+Referer: http://zhuanli.gotoip3.com/e/DoInfo/AddInfo.php?mid=9&enews=MAddInfo&classid=2&Submit=%E6%B7%BB%E5%8A%A0%E4%BF%A1%E6%81%AF
+Content-Length: 1870
+Cache-Control: max-age=0
+Origin: http://zhuanli.gotoip3.com
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US) AppleWebKit/534.16 (KHTML, like Gecko) Chrome/10.0.648.205 Safari/534.16
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryRAh8FOgCpf7VCjSX
+Accept: application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: en-US,zh-CN;q=0.8,en;q=0.6,en-GB;q=0.4
+Accept-Charset: UTF-8,*;q=0.5
+Cookie: abnrpdisplayclass=1; feljwlastdiggid=19n1; feljwlastaddinfotime=1305020161; feljwlastschalltime=1305020172; feljwecookieinforecord=%2C2-8%2C3-9%2C5-1%2C5-2%2C; ygjzeecmsdodbdata=empirecms; ygjzeloginuserid=2; ygjzeloginusername=zhangdongmao; ygjzeloginrnd=gkvnaB57GBdq2fDgyhbf; ygjzeloginlevel=1; ygjzeeloginlic=empirecmslic; ygjzeloginadminstyleid=1; ygjzeloginecmsckpass=6a937cbeadb5119eb6c55e9132a4e966; ygjzetruelogintime=1305103162; ygjzelogintime=1305103185; feljwmlusername=zhangdongmao; feljwmluserid=1; feljwmlgroupid=1; feljwmlrnd=jRseTk5MXeWZ; feljwqeditinfo=dgcms
+
+------WebKitFormBoundaryRAh8FOgCpf7VCjSX
+Content-Disposition: form-data; name="enews"
+
+MAddInfo
+------WebKitFormBoundaryRAh8FOgCpf7VCjSX
+Content-Disposition: form-data; name="classid"
+
+2
+------WebKitFormBoundaryRAh8FOgCpf7VCjSX
+Content-Disposition: form-data; name="id"
+
+
+------WebKitFormBoundaryRAh8FOgCpf7VCjSX
+Content-Disposition: form-data; name="filepass"
+
+1305105844
+------WebKitFormBoundaryRAh8FOgCpf7VCjSX
+Content-Disposition: form-data; name="mid"
+
+9
+------WebKitFormBoundaryRAh8FOgCpf7VCjSX
+Content-Disposition: form-data; name="title"
+
+lego
+------WebKitFormBoundaryRAh8FOgCpf7VCjSX
+Content-Disposition: form-data; name="application_number"
+
+lego
+------WebKitFormBoundaryRAh8FOgCpf7VCjSX
+Content-Disposition: form-data; name="tech_name"
+
+lego
+------WebKitFormBoundaryRAh8FOgCpf7VCjSX
+Content-Disposition: form-data; name="patent_type"
+
+............
+------WebKitFormBoundaryRAh8FOgCpf7VCjSX
+Content-Disposition: form-data; name="problem_solved"
+
+lego
+------WebKitFormBoundaryRAh8FOgCpf7VCjSX
+Content-Disposition: form-data; name="patent_solution"
+
+lego
+------WebKitFormBoundaryRAh8FOgCpf7VCjSX
+Content-Disposition: form-data; name="keywords"
+
+lego
+------WebKitFormBoundaryRAh8FOgCpf7VCjSX
+Content-Disposition: form-data; name="patent_usage_field"
+
+lego
+------WebKitFormBoundaryRAh8FOgCpf7VCjSX
+Content-Disposition: form-data; name="patent_pic1file"; filename=""
+Content-Type: application/octet-stream
+
+
+------WebKitFormBoundaryRAh8FOgCpf7VCjSX
+Content-Disposition: form-data; name="patent_pic2file"; filename=""
+Content-Type: application/octet-stream
+
+
+------WebKitFormBoundaryRAh8FOgCpf7VCjSX
+Content-Disposition: form-data; name="type_number"
+
+lego
+------WebKitFormBoundaryRAh8FOgCpf7VCjSX
+Content-Disposition: form-data; name="addnews"
+
+......
+------WebKitFormBoundaryRAh8FOgCpf7VCjSX--

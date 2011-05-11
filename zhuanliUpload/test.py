@@ -1,25 +1,96 @@
 #!/usr/bin/python
 #coding: utf8
 from xml.dom import minidom
+import urllib2
+import urllib
+import httplib
+import cookielib
+import socket
+import re
+import os
+from multipart import *
 
 class PatentParser():
-    elements=['title','application_number','tech_name','patent_type','problem_solved','patent_solution','keywords','patent_usage_field','patent_pic1file','patent_pic2file']
+    elements=['title','application_number','tech_name','patent_type','problem_solved','patent_solution','keywords','patent_usage_field','type_number','patent_pic1file','patent_pic2file']
     def __init__(self,xml_file):
         """
         """
         self.xml_file=xml_file
     def getall(self):
-        one={}
+        fields=[]
+        files=[]
         xmldoc=minidom.parse(self.xml_file)
         patent=xmldoc.firstChild
         for i in PatentParser.elements:
-               one[i]=patent.getElementsByTagName(i)[0].firstChild.data.strip()
-        return one
+            one={}
+            one[i]=patent.getElementsByTagName(i)[0].firstChild.data.strip()
+            if i in ['patent_pic1file','patent_pic2file']:
+                file_content=""
+                try:
+                    f=open(one[i],'rb')
+                    file_content=f.read()
+                    f.close()
+                except Exception:
+                    print "no files %s"  % (one[i])
+                    pass
+                files.append((i,one[i],file_content))
+            else:
+                fields.append((i,one[i]))
+        return fields,files
         
 
-LOGINURL=""
-ADDINFOURL=""
+
+class Zhuanli88:
+    LOGINURL="http://zhuanli.gotoip3.com/e/enews/index.php"
+    ADDINFOURL="http://zhuanli.gotoip3.com/e/DoInfo/ecms.php"
+    def __init__(self):
+        self.cj=cookielib.LWPCookieJar()
+    def login(self,uid,psw):
+        post_data=urllib.urlencode({'enews':'login','username':uid,'password':psw,'Submit':'登陆'})
+        path=Zhuanli88.LOGINURL
+        try:
+            opener=urllib2.build_opener(urllib2.HTTPCookieProcessor(self.cj))
+            opener.addheaders = [('User-agent','Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)')]
+            urllib2.install_opener(opener)
+            req=urllib2.Request(path,post_data)
+            conn=urllib2.urlopen(req)
+            out=conn.read()
+            print out
+            return 0
+#           print self.cj
+#            self.cj.save(filename="test.ck",ignore_discard=True)
+        except Exception:
+            print "login failed!"
+            return -1
+    def add_patent(self,xml_file,classid):
+        x=PatentParser(xml_file)
+        fields,files=x.getall()
+        fields.append(('enews','MAddInfo'))
+        fields.append(('classid',str(classid)))
+        fields.append(('mid','9'))
+        fields.append(('id',''))
+        fields.append(('filepass','1305105844'))
+        fields.append(('addnews',''))
+        content_type,body=encode_multipart_formdata(fields,files)
+        path=Zhuanli88.ADDINFOURL
+        headers={
+            'Content-Type': content_type,
+            'User-agent':'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)'
+            }
+        print body
+        opener=urllib2.build_opener(urllib2.HTTPCookieProcessor(self.cj))
+        urllib2.install_opener(opener)
+        req=urllib2.Request(path,body,headers)
+        conn=urllib2.urlopen(req)
+        out=conn.read()  
+        print out
+
+
+                                      
+        
 if __name__=='__main__':
-    x=PatentParser('patent.xml')
-    for k,v in x.getall().items():
-        print k,v
+    x=Zhuanli88()
+    if x.login(uid='zhangdongmao',psw='89714942')==0:
+        x.add_patent('patent-ascii.xml',2)
+    else:
+        pass

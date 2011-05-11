@@ -1,4 +1,23 @@
 http://zhuanli.gotoip3.com/e/DoInfo/AddInfo.php?mid=9&enews=MAddInfo&classid=2&Submit=添加信息
+POST /e/enews/index.php HTTP/1.1
+
+Host: zhuanli.gotoip3.com
+User-Agent: Mozilla/5.0 (X11; Linux i686; rv:2.0.1) Gecko/20100101 Firefox/4.0.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-cn,zh;q=0.5
+Accept-Encoding: gzip, deflate
+Accept-Charset: UTF-8,*
+Keep-Alive: 115
+Connection: keep-alive
+Referer: http://zhuanli.gotoip3.com/
+Cookie: feljwlastschalltime=1304846404; feljwlastaddinfotime=1304851613; feljwecookieinforecord=%2C2-8%2C
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 84
+
+enews=login&ecmsfrom=9&username=zhangdongmao&password=1234&Submit=%E7%99%BB%E9%99%86
+
+
+
 农业 2
 通信计算机 3
 视频粮油饮料 6

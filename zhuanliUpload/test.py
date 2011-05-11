@@ -10,6 +10,7 @@ import re
 import os
 from multipart import *
 
+
 class PatentParser():
     elements=['title','application_number','tech_name','patent_type','problem_solved','patent_solution','keywords','patent_usage_field','type_number','patent_pic1file','patent_pic2file']
     def __init__(self,xml_file):
@@ -23,7 +24,7 @@ class PatentParser():
         patent=xmldoc.firstChild
         for i in PatentParser.elements:
             one={}
-            one[i]=patent.getElementsByTagName(i)[0].firstChild.data.strip()
+            one[i]=patent.getElementsByTagName(i)[0].firstChild.data.strip().encode('utf8')
             if i in ['patent_pic1file','patent_pic2file']:
                 file_content=""
                 try:
@@ -77,7 +78,6 @@ class Zhuanli88:
             'Content-Type': content_type,
             'User-agent':'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)'
             }
-        print body
         opener=urllib2.build_opener(urllib2.HTTPCookieProcessor(self.cj))
         urllib2.install_opener(opener)
         req=urllib2.Request(path,body,headers)
@@ -85,12 +85,11 @@ class Zhuanli88:
         out=conn.read()  
         print out
 
-
                                       
         
 if __name__=='__main__':
     x=Zhuanli88()
     if x.login(uid='zhangdongmao',psw='89714942')==0:
-        x.add_patent('patent-ascii.xml',2)
+        x.add_patent('patent.xml',2)
     else:
         pass

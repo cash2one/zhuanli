@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<patent>
+  <title>
+    标题
+  </title>
+  <application_number>
+    申请号
+  </application_number>
+  <tech_name>
+    技术名称
+  </tech_name>
+  <patent_type>
+    专利类型
+  </patent_type>
+  <problem_solved>
+    要解决的技术问题
+  </problem_solved>
+  <patent_solution>
+    技术方案
+  </patent_solution>
+  <keywords>
+    关键词
+  </keywords>
+  <patent_usage_field>
+    用途或技术领域
+  </patent_usage_field>
+  <patent_pic1file>
+    附图1
+  </patent_pic1file>
+  <patent_pic2file>
+    附图2
+  </patent_pic2file>
+</patent>

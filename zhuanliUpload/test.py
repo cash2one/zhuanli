@@ -8,11 +8,14 @@ import cookielib
 import socket
 import re
 import os
+import sys
+import pdb
 from multipart import *
 
 
 class PatentParser():
-    elements=['title','application_number','tech_name','patent_type','problem_solved','patent_solution','keywords','patent_usage_field','type_number','patent_pic1file','patent_pic2file']
+    elements=['title','application_number','tech_name','patent_type','problem_solved','patent_solution','keywords','patent_usage_field','type_number','patent_pic1file','patent_pic2file','classid']
+    classIds={'农业':'2', '通信计算机':'3', '食品粮油饮料':'6', '医疗卫生保健':'7', '轻工日用':'8', '文教体育娱乐':'9', '家用电器':'10', '化工石油冶金':'11', '机械加工设备':'12', '建筑建材':'13', '能源采暖炉灶':'14', '交通车辆运输':'15', '造纸纺织服装':'16', '环保除尘采矿':'17', '其他':'18'}
     def __init__(self,xml_file):
         """
         """
@@ -24,7 +27,13 @@ class PatentParser():
         patent=xmldoc.firstChild
         for i in PatentParser.elements:
             one={}
-            one[i]=patent.getElementsByTagName(i)[0].firstChild.data.strip().encode('utf8')
+            try:
+                one[i]=patent.getElementsByTagName(i)[0].firstChild.data.strip().encode('utf8')
+            except AttributeError:
+                print i
+            except Exception:
+                print i
+                raise
             if i in ['patent_pic1file','patent_pic2file']:
                 file_content=""
                 try:
@@ -35,6 +44,8 @@ class PatentParser():
                     print "no files %s"  % (one[i])
                     pass
                 files.append((i,one[i],file_content))
+            elif i == 'classid':
+                fields.append((i,PatentParser.classIds[one[i]]))
             else:
                 fields.append((i,one[i]))
         return fields,files
@@ -56,18 +67,16 @@ class Zhuanli88:
             req=urllib2.Request(path,post_data)
             conn=urllib2.urlopen(req)
             out=conn.read()
-            print out
             return 0
 #           print self.cj
 #            self.cj.save(filename="test.ck",ignore_discard=True)
         except Exception:
             print "login failed!"
             return -1
-    def add_patent(self,xml_file,classid):
+    def add_patent(self,xml_file):
         x=PatentParser(xml_file)
         fields,files=x.getall()
         fields.append(('enews','MAddInfo'))
-        fields.append(('classid',str(classid)))
         fields.append(('mid','9'))
         fields.append(('id',''))
         fields.append(('filepass','1305105844'))
@@ -84,12 +93,11 @@ class Zhuanli88:
         conn=urllib2.urlopen(req)
         out=conn.read()  
         print out
-
                                       
         
 if __name__=='__main__':
     x=Zhuanli88()
     if x.login(uid='zhangdongmao',psw='89714942')==0:
-        x.add_patent('patent.xml',2)
+        x.add_patent(sys.argv[1])
     else:
         pass

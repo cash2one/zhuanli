@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<patent>
+  <classid>
+   其他
+  </classid>
+  <title>
+    一种建筑建材
+  </title>
+  <application_number>
+    01020641939343
+  </application_number>
+  <tech_name>
+    泥浆检测专用取样装置
+  </tech_name>
+  <patent_type>
+  </patent_type>
+  <problem_solved>
+	  取样装置在取样过程中终处于密封状态
+  </problem_solved>
+  <patent_solution>
+    提供一种泥浆检测专用取样装置，包括吊环、中心杆、手柄轮、外杆、上端盖、套筒、压盘、底锥盘，其中中心杆的上端与吊环下端以螺纹连接，其下端与压盘通过螺栓固定，手柄轮与外杆上端通过螺纹连接，中心杆贯穿安装在外杆内侧，外杆的外侧刻有深度值，其下端与上端盖通过螺纹连接，套筒的上端与上端盖的下端通过螺栓固定，其下侧与底锥盘通过螺栓固定，在套筒的下端有单向进料口，增设了单向进料单向阀和单向出料单向阀，单向进料单向阀包括安装在单向进料口内侧的第一钢球、第一弹簧及第一旋紧螺栓，单向出料单向阀包括安装在与单向出料口内侧的第二钢球、第二弹簧、第二旋紧螺栓及第三旋紧螺栓。
+  </patent_solution>
+  <keywords>
+    泥浆 取样
+  </keywords>
+  <patent_usage_field>
+    泥浆检测
+  </patent_usage_field>
+  <patent_pic1file>
+	  nj1.jpg
+  </patent_pic1file>
+  <patent_pic2file>
+  </patent_pic2file>
+  <type_number>
+	  分类号
+  </type_number>
+  <name>曹启玲</name> 
+  <tel>0523-88279310</tel>
+  <address>江苏省泰州市姜堰市人民中路261号</address>
+  <zip_code>225500</zip_code>
+</patent>

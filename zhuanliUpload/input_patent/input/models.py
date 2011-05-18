@@ -3,8 +3,8 @@ from django.db import models
 from django.contrib import admin
 
 type_choices=(
-("实用新型","实用新型"),
-("发明","发明")
+("a","实用新型"),
+("b","发明")
 )
 class Catalogs(models.Model):
     classid=models.IntegerField(unique=True)

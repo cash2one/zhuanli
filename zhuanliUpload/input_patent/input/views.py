@@ -8,6 +8,7 @@ from django.core.context_processors import csrf
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 
+
 class PatentForm(ModelForm):
     class Meta:
         model=Patent
@@ -22,22 +23,25 @@ def main(request):
 def list(request,classid):
     patents=Patent.objects.filter(classid=classid)
     return render_to_response("input/list.html",add_csrf(request,patents=patents))
+
 def detail(request,pk):
     patent=Patent.objects.get(pk=pk)
     if request.method=="POST":
-        patent_form=PatentForm(request.POST,instance=patent)
+        patent_form=PatentForm(request.POST,request.FILES,instance=patent)
+        print request.FILES
         if patent_form.is_valid():
             patent_form.save()
+            return HttpResponseRedirect(reverse("input.views.main"))
     else:
         patent_form=PatentForm(instance=patent)
     return render_to_response("input/detail.html",add_csrf(request,patent_form=patent_form,pk=pk))
 
 def post(request):
     if request.method=="POST":
-        patent_form=PatentForm(request.POST)
+        patent_form=PatentForm(request.POST,request.FILES)
         if patent_form.is_valid():
             new_patent=patent_form.save()
-            return HttpResponseRedirect(reverse("input.views.detail",args=[new_patent.pk]))
+            return HttpResponseRedirect(reverse("input.views.main"))
     else:
         patent_form=PatentForm()
     return render_to_response("input/post.html",add_csrf(request,patent_form=patent_form))

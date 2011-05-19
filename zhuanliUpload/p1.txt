@@ -1,17 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <patent>
   <classid>
-   其他
+	  通信计算机	  
   </classid>
   <title>
-    一种建筑建材
+    图像测试泥浆检测专用取样装置
   </title>
   <application_number>
-    01020641939343
+    0206939343asdf
   </application_number>
-  <tech_name>
-    泥浆检测专用取样装置
-  </tech_name>
   <patent_type>
   </patent_type>
   <problem_solved>
@@ -27,15 +24,15 @@
     泥浆检测
   </patent_usage_field>
   <patent_pic1file>
-	  nj1.jpg
+	  3ff28f1e-b65d-426a-9763-d5d8cd9716f3.jpg
   </patent_pic1file>
   <patent_pic2file>
   </patent_pic2file>
   <type_number>
 	  分类号
   </type_number>
-  <name>曹启玲</name> 
-  <tel>0523-88279310</tel>
+  <name>曹启玲1</name> 
+  <tel>0523-88279310dsf</tel>
   <address>江苏省泰州市姜堰市人民中路261号</address>
   <zip_code>225500</zip_code>
 </patent>

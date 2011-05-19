@@ -1,8 +1,9 @@
 <html>
-<form method="POST" id="" action="{%url input.views.detail pk %}">{%csrf_token%}
-<table width="" cellspacing="" cellpadding="" border="0">
+<meta name="Content-Type" content="text/html; charset=UTF-8" />
+<form enctype="multipart/form-data" method="POST" id="" action="" >{%csrf_token%}
+<table width="" cellspacing="" cellpadding="" border="1">
 {{patent_form.as_table}}    
 </table>
 <input type="submit" name="submit" value="submit" />
 </form>
-</htm
+</html>

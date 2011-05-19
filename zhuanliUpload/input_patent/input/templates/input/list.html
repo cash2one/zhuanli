@@ -1,0 +1,3 @@
+{%for patent in patents%}
+<a href="{%url input.views.detail patent.pk%}">{{patent.tech_name}}</a>
+{%endfor%}

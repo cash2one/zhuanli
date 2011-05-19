@@ -3,15 +3,17 @@ from django.db import models
 from django.contrib import admin
 
 type_choices=(
-("a","实用新型"),
-("b","发明")
+(u"实用新型",u"实用新型"),
+(u"发明",u"发明")
 )
 class Catalogs(models.Model):
     classid=models.IntegerField(unique=True)
     name=models.CharField(max_length=20)
+    def __unicode__(self):
+        return self.name
 
 class Patent(models.Model):
-    classid=models.ForeignKey(Catalogs)
+    classid=models.ForeignKey(Catalogs,verbose_name="行业分类",default="")
     tech_name=models.CharField(max_length=60,verbose_name="技术名称")
     application_number=models.CharField(max_length=60,unique=True,verbose_name="申请号")
     type_name=models.CharField(max_length=60,verbose_name="分类号")
@@ -26,4 +28,6 @@ class Patent(models.Model):
     tel=models.CharField(max_length=20,verbose_name="电话")
     address=models.CharField(max_length=100,verbose_name="地址",blank=True)
     zip_code=models.CharField(max_length=10,verbose_name="邮编",blank=True)
-
+    updateTime=models.DateTimeField(auto_now_add=True)
+    def __unicode__(self):
+        return self.tech_name 

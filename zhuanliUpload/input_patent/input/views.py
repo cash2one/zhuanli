@@ -24,14 +24,21 @@ def list(request,classid):
     return render_to_response("input/list.html",add_csrf(request,patents=patents))
 def detail(request,pk):
     patent=Patent.objects.get(pk=pk)
-    patent_form=PatentForm(instance=patent)
-    return render_to_response("input/detail.html",add_csrf(request,patent_form=patent_form))
+    if request.method=="POST":
+        patent_form=PatentForm(request.POST,instance=patent)
+        if patent_form.is_valid():
+            patent_form.save()
+    else:
+        patent_form=PatentForm(instance=patent)
+    return render_to_response("input/detail.html",add_csrf(request,patent_form=patent_form,pk=pk))
+
 def post(request):
     if request.method=="POST":
         patent_form=PatentForm(request.POST)
         if patent_form.is_valid():
             new_patent=patent_form.save()
-            return HttpResponseRedirect(reverse("input.views.detail",args=new_patent.pk))
+            return HttpResponseRedirect(reverse("input.views.detail",args=[new_patent.pk]))
     else:
         patent_form=PatentForm()
     return render_to_response("input/post.html",add_csrf(request,patent_form=patent_form))
+    

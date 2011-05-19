@@ -67,9 +67,9 @@ class Zhuanli88:
             req=urllib2.Request(path,post_data)
             conn=urllib2.urlopen(req)
             out=conn.read()
+            self.cj.save(filename="test.ck",ignore_discard=True)
             return 0
 #           print self.cj
-#            self.cj.save(filename="test.ck",ignore_discard=True)
         except Exception:
             print "login failed!"
             return -1

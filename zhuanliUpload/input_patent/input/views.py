@@ -1,5 +1,6 @@
 # Create your views here.
 from django.conf.urls.defaults import *
+from django.conf import settings
 from input.models import *
 from django.forms import ModelForm
 from django.http import HttpResponseRedirect, HttpResponse
@@ -35,6 +36,14 @@ def detail(request,pk):
     else:
         patent_form=PatentForm(instance=patent)
     return render_to_response("input/detail.html",add_csrf(request,patent_form=patent_form,pk=pk))
+
+def delete(request,pk):
+    patent=Patent.objects.get(pk=pk)
+    img1=patent.patent_pic1file
+    img2=patent.patent_pic2file
+    patent.delete()
+    #TODO delete pictures
+    return HttpResponseRedirect(reverse("input.views.main"))
 
 def post(request):
     if request.method=="POST":

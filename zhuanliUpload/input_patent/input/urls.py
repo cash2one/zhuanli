@@ -4,6 +4,7 @@ urlpatterns=patterns("input.views",
                (r'^$',"main"),
                (r'^list/(\d+)/$','list'),
                (r'^detail/(\d+)/$','detail'),
-               (r'^post/$','post')
+               (r'^post/$','post'),
+               (r'^delete/(\d+)/$','delete')
 )
 

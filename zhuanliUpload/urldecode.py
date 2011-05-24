@@ -5,6 +5,7 @@ def urldecode(query):
     a = query.split('&')
     for s in a:
         if s.find('='):
+            print s
             k,v = map(urllib.unquote, s.split('='))
             try:
                 d[k].append(v)

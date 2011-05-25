@@ -1,6 +1,1 @@
-<html>
-{%for catalog in catalogs %}
-<a href="{%url input.views.list catalog.pk%}">{{catalog.name}}</a>
-{%endfor%}
-</html>
-
+{%extends "input/base.html" %}

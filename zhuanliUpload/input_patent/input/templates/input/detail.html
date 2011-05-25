@@ -1,13 +1,14 @@
-<html>
-<meta name="Content-Type" content="text/html; charset=UTF-8" />
+{%extends "input/base.html" %}
+{%block content%}
 <form enctype="multipart/form-data" method="POST" id="" action="" >{%csrf_token%}
+<div id=table_content>
 <table width="" cellspacing="" cellpadding="" border="1">
 {{patent_form.as_table}}    
 </table>
+</div>
 <input type="submit" name="submit" value="submit" />
 </form>
 
 <form  action="{%url input.views.delete pk%}" />
-<input type="submit" name="submit" value="submit" />
-</form>
-</html>
+<input type="submit" name="delete" value="delete" />
+{%endblock%}

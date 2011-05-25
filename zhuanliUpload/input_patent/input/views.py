@@ -31,10 +31,8 @@ def detail(request,pk):
         patent_form=PatentForm(request.POST,request.FILES,instance=patent)
         print request.FILES
         if patent_form.is_valid():
-            patent_form.save()
-            return HttpResponseRedirect(reverse("input.views.main"))
-    else:
-        patent_form=PatentForm(instance=patent)
+            patent=patent_form.save()
+    patent_form=PatentForm(instance=patent)
     return render_to_response("input/detail.html",add_csrf(request,patent_form=patent_form,pk=pk))
 
 def delete(request,pk):
@@ -50,7 +48,7 @@ def post(request):
         patent_form=PatentForm(request.POST,request.FILES)
         if patent_form.is_valid():
             new_patent=patent_form.save()
-            return HttpResponseRedirect(reverse("input.views.main"))
+            return HttpResponseRedirect(reverse("input.views.detail"))
     else:
         patent_form=PatentForm()
     return render_to_response("input/post.html",add_csrf(request,patent_form=patent_form))

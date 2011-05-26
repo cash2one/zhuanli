@@ -1,4 +1,4 @@
-/* 
+﻿/* 
 CSS Document 
 Wink Hosting (www.winkhosting.com)
 Designed By Alexis Corredor
@@ -70,7 +70,7 @@ body {
 .footer{
 	width: 779px;
 	height: 32px;
-	background-image:url(bg_footer.gif);
+	background-image:url(/media/images/bg_footer.gif);
 	background-repeat:no-repeat;
 	clear:both;
 	font-family: Verdana, Arial, Helvetica, sans-serif;

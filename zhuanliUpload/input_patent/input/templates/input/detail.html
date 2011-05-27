@@ -1,5 +1,6 @@
 {%extends "input/base.html" %}
-{%block content%}
+
+{%block contents%}
 <form enctype="multipart/form-data" method="POST" id="" action="" >{%csrf_token%}
 <div id=table_content>
 <table width="" cellspacing="" cellpadding="" border="1">
@@ -8,6 +9,7 @@
 </div>
 <input type="submit" name="submit" value="submit" />
 </form>
+
 
 <form  action="{%url input.views.delete pk%}" />
 <input type="submit" name="delete" value="delete" />

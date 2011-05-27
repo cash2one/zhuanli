@@ -1,5 +1,5 @@
 # Django settings for input_patent project.
-
+import sys
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -45,7 +45,10 @@ USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = '/home/zhangdongmao/zhuanli/zhuanliUpload/input_patent/media/'
+if sys.platform == "win32":
+    MEDIA_ROOT = 'c:'
+elif sys.platform == "linux2":
+    MEDIA_ROOT = '/home/zhangdongmao/zhuanli/zhuanliUpload/input_patent/media/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).

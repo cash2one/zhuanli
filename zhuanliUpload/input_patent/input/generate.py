@@ -5,4 +5,4 @@ from input.models import *
 from datetime import datetime
 now=datetime.now()
 lastUpate=
-Patent.objects.filter(updateTime>datetime.now())
+Patent.objects.filter(updateTime_gte=datetime.now())

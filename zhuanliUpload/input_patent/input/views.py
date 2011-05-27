@@ -40,8 +40,9 @@ def delete(request,pk):
     patent=Patent.objects.get(pk=pk)
     img1=patent.patent_pic1file
     img2=patent.patent_pic2file
+    img1.delete()
+    img2.delete()
     patent.delete()
-    #TODO delete pictures
     return HttpResponseRedirect(reverse("input.views.main"))
 
 def post(request):

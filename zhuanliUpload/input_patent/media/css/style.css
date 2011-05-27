@@ -1,4 +1,4 @@
-/* 
+﻿/* 
 CSS Document 
 Wink Hosting (www.winkhosting.com)
 Designed By Alexis Corredor
@@ -70,7 +70,7 @@ body {
 .footer{
 	width: 779px;
 	height: 32px;
-	background-image:url(bg_footer.gif);
+	background-image:url(/media/images/bg_footer.gif);
 	background-repeat:no-repeat;
 	clear:both;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -130,12 +130,22 @@ body {
 }
 
 .subtitle_gray {	font-family:Verdana, Arial, Helvetica, sans-serif;	
-	font-weight: bold;
+	/*font-weight: bold;*/
 	font-size: 14px;
-	color: #CCCCCC;
+	/*color: #CCCCCC;*/
 }
 .title_blue {font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold; font-size: 26px; color: #7DA5E0; }
 .title_panel {	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 12px;
 	font-weight: bold;
+}
+
+.news_date a {
+				display:block;
+				height:18px;
+				text-decoration:none;
+
+}
+.news_date a:hover{
+	text-decoration:underline;
 }

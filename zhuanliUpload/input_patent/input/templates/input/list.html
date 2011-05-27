@@ -1,3 +1,11 @@
+{%extends 'input/base.html'%}
+{%block contents%}
+{%if patents%}
 {%for patent in patents%}
 <a href="{%url input.views.detail patent.pk%}">{{patent.tech_name}}</a>
 {%endfor%}
+{%else%}
+<span class="subtitle_gray">还没有专利信息</span><br />
+{%endif%}
+
+{%endblock%}

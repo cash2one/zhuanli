@@ -1,0 +1,18 @@
+{%extends "input/base.html" %}
+
+{%block contents%}
+<form enctype="multipart/form-data" method="POST" id="" action="{%url input.views.update pk%}" >{%csrf_token%}
+<div id=table_content>
+<table width="" cellspacing="" cellpadding="" border="1">
+{{patent_form.as_table}}    
+</table>
+</div>
+<input type="submit" name="submit" value="submit" />
+</form>
+
+
+
+<form  action="{%url input.views.delete pk%}" />
+<input type="submit" name="delete" value="delete" />
+</form>
+{%endblock%}

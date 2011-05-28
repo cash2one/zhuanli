@@ -18,9 +18,11 @@ def add_csrf(request,**kwargs):
     d=dict(**kwargs)
     d.update(csrf(request))
     return d
+
 def main(request):
     catalogs=Catalogs.objects.all()
     return render_to_response("input/main.html",add_csrf(request,catalogs=catalogs))
+
 def list(request,classid):
     catalogs=Catalogs.objects.all()
     patents=Patent.objects.filter(classid=classid)
@@ -29,19 +31,27 @@ def list(request,classid):
 def detail(request,pk):
     catalogs=Catalogs.objects.all()
     patent=Patent.objects.get(pk=pk)
+    return render_to_response("input/detail.html",dict(patent=patent,pk=pk,catalogs=catalogs))
+    
+def update(request,pk):
+    catalogs=Catalogs.objects.all()
+    patent=Patent.objects.get(pk=pk)
     if request.method=="POST":
         patent_form=PatentForm(request.POST,request.FILES,instance=patent)
         if patent_form.is_valid():
             patent=patent_form.save()
+            return HttpResponseRedirect(reverse('input.views.detail',args=[pk]))
     patent_form=PatentForm(instance=patent)
-    return render_to_response("input/detail.html",add_csrf(request,patent_form=patent_form,pk=pk,catalogs=catalogs))
+    return render_to_response("input/update.html",add_csrf(request,patent_form=patent_form,pk=pk,catalogs=catalogs))
 
 def delete(request,pk):
     patent=Patent.objects.get(pk=pk)
     img1=patent.patent_pic1file
     img2=patent.patent_pic2file
-    img1.delete()
-    img2.delete()
+    if img1:
+        img1.delete()
+    if img2:
+        img2.delete()
     patent.delete()
     return HttpResponseRedirect(reverse("input.views.main"))
 

@@ -1,16 +1,24 @@
 {%extends "input/base.html" %}
-
 {%block contents%}
-<form enctype="multipart/form-data" method="POST" id="" action="" >{%csrf_token%}
-<div id=table_content>
 <table width="" cellspacing="" cellpadding="" border="1">
-{{patent_form.as_table}}    
+<tr><th>行业分类</th><td>{{patent.classid}}</td></tr>
+<tr><th>技术名称</th><td>{{patent.tech_name}}</td></tr>
+<tr><th>申请号:</th><td>{{patent.application_number}}</td></tr>
+<tr><th>分类号:</th><td>{{patent.type_name}}</td></tr>
+<tr><th>专利类型:</label></th><td>{{patent.patent_type}}</td></tr>
+<tr><th>要解决的技术问题:</label></th><td>{{patent.problem_solved}}</td></tr>
+<tr><th>技术方案</th><td>{{patent.patent_solution}}</td></tr>
+<tr><th>关键词</th><td>{{patent.keywords}}</td></tr>
+<tr><th>附图1</th><td> <img src="/media/{{patent.patent_pic1file}}" class="" alt="" /> </td></tr>
+<tr><th>附图2</th><td> <img src="/media/{{patent.patent_pic2file}}" class="" alt="" /> </td></tr>
+<tr><th>姓名</th><td>{{patent.name}}</td></tr>
+<tr><th>电话:</th><td>{{patent.tel}}</td></tr>
+<tr><th>地址:</th>{{patent.address}}<td></td></tr>
+<tr><th>邮编</th><td>{{patent.zip_code}}</td></tr>  
 </table>
-</div>
-<input type="submit" name="submit" value="submit" />
+
+<form method="" id="" action="{%url input.views.update pk%}">
+<input type="submit" name="update" value="修改" /> 
 </form>
 
-
-<form  action="{%url input.views.delete pk%}" />
-<input type="submit" name="delete" value="delete" />
 {%endblock%}

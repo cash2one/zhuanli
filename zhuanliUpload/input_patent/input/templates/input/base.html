@@ -4,6 +4,25 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" href="/media/css/style.css" type="text/css" />
 	<title>专利信息录入系统</title>
+	
+<script language="javascript" type="text/javascript">
+function highURL(menuId,classCur){
+if(!document.getElementById) 
+return false;
+if(!document.getElementById(menuId)) return false;
+if(!document.getElementsByTagName) return false;
+var menuId=document.getElementById(menuId);
+var links=menuId.getElementsByTagName("a");
+for(var i=0; i<links.length; i++ ){
+    var menuLink=links[i].href;
+    var currentLink=window.location.href;
+    if(currentLink.indexOf(menuLink)!=-1){
+    links[i].className=classCur;    
+    }
+}
+}
+</script>
+
 </head>
 <body>
 	<div id="page" align="center">
@@ -19,12 +38,14 @@
 				</div>
 				<div class="table_content">
 					<div class="table_text">
-						<span class="news_date">
+						<span class="news_date" id="catalogs">
 						{%for catalog in catalogs %}
-                <a href="{%url input.views.list catalog.pk%}">{{catalog.name}}</a>
+                <a href="{%url input.views.list catalog.pk%}" >{{catalog.name}}</a>
                 {%endfor%}
 						</span>				
 					</div>
+				<script language="javascript" type="text/javascript">highURL("catalogs","current")</script>	
+
 				</div>
 				<div class="table_bottom">
 					<img src="/media/images/table_bottom.jpg" width="204" height="23" border="0" alt="" />

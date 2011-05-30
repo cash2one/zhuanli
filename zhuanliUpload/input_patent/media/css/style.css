@@ -150,7 +150,7 @@ body {
 .news_date a:link {color: #0099CC; text-decoration: none;}		/* 未访问的链接 */
 .news_date a:visited {color: #0099CC; text-decoration: none;}	/* 已访问的链接 */
 .news_date a:hover {color: #0099CC; text-decoration: none;}	/* 鼠标移动到链接上 */
-.news_date a:active {color: #0000FF; text-decoration: none;}	/* 选定的链接 */
+.news_date a:active {color: #0099CC; text-decoration: none;}	/* 选定的链接 */
 
 .news_more a:link {color: #0099CC; text-decoration: none;}		/* 未访问的链接 */
 .news_more a:visited {color: #0099CC; text-decoration: none;}	/* 已访问的链接 */
@@ -175,3 +175,9 @@ body {
 				position:relative;
 				left:60px;
 }
+
+.current{
+  color:#ffffff;
+  background:#D0D0D0;
+}
+

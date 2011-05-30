@@ -1,18 +1,25 @@
-{%extends "input/base.html" %}
+﻿{%extends "input/base.html" %}
 
 {%block contents%}
 <form enctype="multipart/form-data" method="POST" id="" action="{%url input.views.update pk%}" >{%csrf_token%}
 <div id=table_content>
-<table width="" cellspacing="" cellpadding="" border="1">
+<table id="post_table" width="" cellspacing="" cellpadding="" border="1">
 {{patent_form.as_table}}    
 </table>
 </div>
-<input type="submit" name="submit" value="submit" />
+<input id="submit_info" type="submit" name="submit" value="submit" >
 </form>
 
 
+<script type="text/javascript">
+function show_confirm()
+{
+var r=confirm("确定删除？");
+return r;
+}
+</script>
 
-<form  action="{%url input.views.delete pk%}" />
-<input type="submit" name="delete" value="delete" />
+<form  action="{%url input.views.delete pk%}" onsubmit="return show_confirm();">
+<input id="delete_info" type="submit" name="delete" value="delete">
 </form>
 {%endblock%}

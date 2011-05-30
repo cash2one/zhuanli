@@ -46,7 +46,7 @@ USE_L10N = True
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/"
 if sys.platform == "win32":
-    MEDIA_ROOT = 'c:'
+    MEDIA_ROOT = 'C:/Documents and Settings/yangyan1/My Documents/django projects/zhuanli/zhuanliUpload/input_patent/media'
 elif sys.platform == "linux2":
     MEDIA_ROOT = '/home/zhangdongmao/zhuanli/zhuanliUpload/input_patent/media/'
 

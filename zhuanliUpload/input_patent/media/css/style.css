@@ -169,4 +169,9 @@ body {
 #companyname a:hover {color: #FFFFFF; text-decoration: none;}	/* 鼠标移动到链接上 */
 #companyname a:active {color: #FFFFFF; text-decoration: none;}	/* 选定的链接 */
 
-
+#delete_info{
+				margin:5px 0px 25px 5px;
+				text-align:left;
+				position:relative;
+				left:60px;
+}

@@ -1,6 +1,19 @@
 ﻿{%extends "input/base.html" %}
 
 {%block contents%}
+<script type="text/javascript">
+function show_confirm()
+{
+var r=confirm("确定删除？");
+return r;
+}
+</script>
+
+<form  id="delete_info" action="{%url input.views.delete pk%}" onsubmit="return show_confirm();" >
+<input type="submit" name="delete" value="删除此条信息">
+</form>
+
+
 <form enctype="multipart/form-data" method="POST" id="" action="{%url input.views.update pk%}" >{%csrf_token%}
 <div id=table_content>
 <table id="post_table" width="" cellspacing="" cellpadding="" border="1">
@@ -11,15 +24,4 @@
 </form>
 
 
-<script type="text/javascript">
-function show_confirm()
-{
-var r=confirm("确定删除？");
-return r;
-}
-</script>
-
-<form  action="{%url input.views.delete pk%}" onsubmit="return show_confirm();">
-<input id="delete_info" type="submit" name="delete" value="delete">
-</form>
 {%endblock%}

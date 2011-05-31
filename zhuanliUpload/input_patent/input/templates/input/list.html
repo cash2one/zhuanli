@@ -3,7 +3,7 @@
 {%if patents%}
 <ul id="info_list">
 {%for patent in patents%}
-<li><a href="{%url input.views.detail patent.pk%}">{{patent.tech_name}}</a></li>
+<li><a href="{%url input.views.detail patent.pk%}">{{patent.title}}</a></li>
 {%endfor%}
 </ul>
 {%else%}

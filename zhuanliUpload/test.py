@@ -33,7 +33,8 @@ class PatentParser():
                 print i
             except Exception:
                 print i
-                raise
+            except IndexError:
+                print i
             if i in ['patent_pic1file','patent_pic2file']:
                 file_content=""
                 try:

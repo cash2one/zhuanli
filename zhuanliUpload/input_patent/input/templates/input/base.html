@@ -40,7 +40,7 @@ for(var i=0; i<links.length; i++ ){
 					<div class="table_text">
 						<span class="news_date" id="catalogs">
 						{%for catalog in catalogs %}
-                <a href="{%url input.views.list catalog.pk%}" >{{catalog.name}}</a>
+                <a id="info_class" href="{%url input.views.list catalog.pk%}" >{{catalog.name}}</a>
                 {%endfor%}
 						</span>				
 					</div>

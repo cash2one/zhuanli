@@ -181,3 +181,18 @@ body {
   background:#D0D0D0;
 }
 
+#info_list{
+				text-align:left;
+}
+
+#info_list li{
+				margin:10px 5px;
+}
+#info_list li a{
+				text-decoration: none;
+				color: #000000;
+}
+
+#info_class{
+				padding:5px 0px;
+}

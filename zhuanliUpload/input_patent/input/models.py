@@ -33,4 +33,4 @@ class Patent(models.Model):
     def __unicode__(self):
         return self.tech_name 
 class ExcuteTime(models.Model):
-    excuteTime=models.DateTimeField(auto_now_add=True)
+    excuteTime=models.DateTimeField()

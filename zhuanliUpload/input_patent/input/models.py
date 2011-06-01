@@ -31,6 +31,6 @@ class Patent(models.Model):
     zip_code=models.CharField(max_length=10,verbose_name="邮编",blank=True)
     updateTime=models.DateTimeField(auto_now_add=True)
     def __unicode__(self):
-        return self.tech_name 
+        return self.title
 class ExcuteTime(models.Model):
     excuteTime=models.DateTimeField()

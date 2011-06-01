@@ -78,8 +78,8 @@ def generate(request):
     lastExcutetime=ExcuteTime.objects.get(pk=1)
     now=datetime.now()
     xmlfileList=[]
-#    patents=Patent.objects.filter(updateTime__gt=lastExcutetime.excuteTime).values()
-    patents=Patent.objects.values()
+    patents=Patent.objects.filter(updateTime__gt=lastExcutetime.excuteTime).values()
+#   patents=Patent.objects.values()
     impl=xml.dom.minidom.getDOMImplementation()
     i=0
     for patent in patents:
@@ -102,8 +102,8 @@ def generate(request):
         i=i+1
         f=file(filename,'w')
         writer=codecs.lookup('utf8')[3](f)
-        dom.writexml(writer,encoding='utf-8',newl='\n')
+        dom.writexml(writer,encoding='utf-8',newl='\r\n')
         xmlfileList.append(filename)
-    # lastExcutetime.excuteTime=now
-    # lastExcutetime.save()
+    lastExcutetime.excuteTime=now
+    lastExcutetime.save()
     return render_to_response("input/gen.html",add_csrf(request,xmls=xmlfileList,catalogs=catalogs))

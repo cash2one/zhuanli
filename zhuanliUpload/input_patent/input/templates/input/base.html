@@ -33,6 +33,21 @@ for(var i=0; i<links.length; i++ ){
 		<br />
 		<div id="content">
 			<div id="leftpanel">
+			    <div class="table_top">
+					<span class="title_panel">录入</span>
+				</div>
+				<div class="table_content">
+					<div class="table_text">
+						<span class="news_more"><a href="{%url input.views.post%}">
+						录入新内容
+						</a></span><br />
+					</div>
+				</div>
+				<div class="table_bottom">
+					<img src="/media/images/table_bottom.jpg" width="204" height="23" border="0" alt="" />
+				</div>
+				<br />
+				
 				<div class="table_top">
 					<div align="center"><span class="title_panel">查看与编辑</span> </div>
 				</div>
@@ -51,20 +66,7 @@ for(var i=0; i<links.length; i++ ){
 					<img src="/media/images/table_bottom.jpg" width="204" height="23" border="0" alt="" />
 				</div>
 				<br />
-				<div class="table_top">
-					<span class="title_panel">录入</span>
-				</div>
-				<div class="table_content">
-					<div class="table_text">
-						<span class="news_more"><a href="{%url input.views.post%}">
-						录入新内容
-						</a></span><br />
-					</div>
-				</div>
-				<div class="table_bottom">
-					<img src="/media/images/table_bottom.jpg" width="204" height="23" border="0" alt="" />
-				</div>
-				<br />
+				
 			</div>
 			<div id="contenttext">
 				{%block contents%}

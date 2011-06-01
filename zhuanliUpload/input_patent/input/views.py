@@ -8,6 +8,12 @@ from django.shortcuts import get_object_or_404, render_to_response
 from django.core.context_processors import csrf
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
+from datetime import datetime
+from utils import makeEasyTag,checkDir
+import codecs
+import xml.dom.minidom
+import os.path
+import shutil
 
 
 class PatentForm(ModelForm):
@@ -65,4 +71,39 @@ def post(request):
     else:
         patent_form=PatentForm()
     return render_to_response("input/post.html",add_csrf(request,patent_form=patent_form,catalogs=catalogs))
-    
+
+
+def generate(request):
+    catalogs=Catalogs.objects.all()
+    lastExcutetime=ExcuteTime.objects.get(pk=1)
+    now=datetime.now()
+    xmlfileList=[]
+#    patents=Patent.objects.filter(updateTime__gt=lastExcutetime.excuteTime).values()
+    patents=Patent.objects.values()
+    impl=xml.dom.minidom.getDOMImplementation()
+    i=0
+    for patent in patents:
+        dom=impl.createDocument(None,'patent',None)
+        root=dom.documentElement
+        filename=os.path.join(settings.MEDIA_ROOT,'output',now.strftime('%Y%m%d%H'),'p'+str(i)+'.xml')
+        d=checkDir(filename)
+        for k,v in patent.iteritems():
+            if k == 'updateTime' or  k == 'id' :
+                continue
+            if k == 'classid_id':
+                v=Catalogs.objects.get(pk=v).name
+                k=u'classid'
+            if k in ('patent_pic2file','patent_pic1file'):
+                if v:
+                    shutil.copy(os.path.join(settings.MEDIA_ROOT,v),d)
+                    v=os.path.basename(v)
+            item=makeEasyTag(dom,k,v)
+            root.appendChild(item)
+        i=i+1
+        f=file(filename,'w')
+        writer=codecs.lookup('utf8')[3](f)
+        dom.writexml(writer,encoding='utf-8',newl='\n')
+        xmlfileList.append(filename)
+    # lastExcutetime.excuteTime=now
+    # lastExcutetime.save()
+    return render_to_response("input/gen.html",add_csrf(request,xmls=xmlfileList,catalogs=catalogs))

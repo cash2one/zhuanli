@@ -16,9 +16,9 @@ class Catalogs(models.Model):
 
 class Patent(models.Model):
     classid=models.ForeignKey(Catalogs,verbose_name="行业分类",default="")
-    tech_name=models.CharField(max_length=60,verbose_name="技术名称")
+    title=models.CharField(max_length=60,verbose_name="技术名称")
     application_number=models.CharField(max_length=60,unique=True,verbose_name="申请号")
-    type_name=models.CharField(max_length=60,verbose_name="分类号")
+    type_number=models.CharField(max_length=60,verbose_name="分类号")
     patent_type=models.CharField(max_length=15,choices=type_choices,default="",verbose_name="专利类型")
     problem_solved=models.CharField(max_length=100,verbose_name="要解决的技术问题")
     patent_solution=models.TextField(verbose_name="技术方案")
@@ -33,4 +33,4 @@ class Patent(models.Model):
     def __unicode__(self):
         return self.tech_name 
 class ExcuteTime(models.Model):
-    excuteTime=models.DateTimeField(auto_now_add=True)
+    excuteTime=models.DateTimeField()

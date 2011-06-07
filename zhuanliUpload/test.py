@@ -10,6 +10,7 @@ import re
 import os
 import sys
 import pdb
+import codecs
 from multipart import *
 
 
@@ -68,9 +69,7 @@ class Zhuanli88:
             req=urllib2.Request(path,post_data)
             conn=urllib2.urlopen(req)
             out=conn.read()
-            self.cj.save(filename="test.ck",ignore_discard=True)
             return 0
-#           print self.cj
         except Exception:
             print "login failed!"
             return -1
@@ -92,8 +91,10 @@ class Zhuanli88:
         urllib2.install_opener(opener)
         req=urllib2.Request(path,body,headers)
         conn=urllib2.urlopen(req)
-        out=conn.read()  
-        print out
+        out=conn.read()
+        if out[:3]==codecs.BOM_UTF8:
+            out=out[3:]
+            print unicode(out,"utf8").encode('gbk')
                                       
         
 if __name__=='__main__':

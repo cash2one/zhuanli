@@ -29,6 +29,7 @@ class Patent(models.Model):
     tel=models.CharField(max_length=20,verbose_name="电话")
     address=models.CharField(max_length=100,verbose_name="地址",blank=True)
     zip_code=models.CharField(max_length=10,verbose_name="邮编",blank=True)
+    email=models.CharField(max_length=20,verbose_name="电子邮件",blank=True)
     updateTime=models.DateTimeField(auto_now_add=True)
     def __unicode__(self):
         return self.title

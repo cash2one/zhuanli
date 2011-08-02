@@ -1,0 +1,61 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<script type="text/javascript" src="_lib/jquery.js"></script>
+<script type="text/javascript" src="_lib/jquery.cookie.js"></script>
+<script type="text/javascript" src="_lib/jquery.hotkeys.js"></script>
+<script type="text/javascript" src="jquery.jstree.js"></script>
+<link type="text/css" rel="stylesheet" href="themes/redmond/jquery-ui-1.8.14.custom.css">
+<style type="text/css">
+  #tree{
+  float:left;
+  width:200px;
+  }
+  #content{
+  float:left;
+  }
+</style>
+<!-- Here goes javascript -->
+<script type="text/javascript">
+  $(document).ready(function()
+  {
+  var $content=$('#content')
+  $('#tree a').click(
+  function(e)
+  {
+  href=$(this).attr('href')
+  e.preventDefault();
+  $content.load(href)
+  });
+
+  $('#tree').jstree({
+  "plugins":["html_data","ui","themeroller"],
+  //"themes":{"theme":"classic","dots":true,"icons":true}
+  });
+
+});
+</script>
+</head>
+<div id="tree">
+  <ul>
+    <li id="html_1">
+      <a href="1.html">简介</a>
+      <ul>
+	<li id=a><a href="3.html">邮箱</a></li>
+	<li id=b><a href="2.html">其他</a></li>
+	</ul>
+    </li>
+
+    <li id="html_2">
+      <a href="2.html">说明书</a>
+    </li>
+    <li id="html_3">
+      <a href="3.html">结论</a>
+    </li>
+  </ul>
+</div>
+<div id="content">
+  content<br>
+  this is great!
+</div>
+</html>

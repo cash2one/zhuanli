@@ -45,11 +45,9 @@ class UploadGui(object):
 	def updateGui(self,data):
 		fraction=data[0]
 		log=data[1]
-#		self.text_buffer.
-		print fraction
-		print log
+		iter=self.text_buffer.get_end_iter()
+		self.text_buffer.insert(iter,log+'\n')
 		self.progressbar.set_fraction(fraction)
-		self.text_buffer.set_text(log)
 
 	def on_button_clicked(self,widget,data=None):
 		print self.filechooser.get_filename()

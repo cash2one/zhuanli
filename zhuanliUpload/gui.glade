@@ -1,60 +1,72 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
 <interface>
-  <requires lib="gtk+" version="2.24"/>
+  <requires lib="gtk+" version="2.22"/>
   <!-- interface-naming-policy project-wide -->
-  <object class="GtkWindow" id="window1">
-    <property name="can_focus">False</property>
-    <signal name="destroy" handler="on_window1_destroy" swapped="no"/>
+  <object class="GtkWindow" id="window">
+    <property name="title" translatable="yes">upload gui</property>
+    <property name="window_position">center</property>
+    <property name="default_width">338</property>
+    <property name="default_height">403</property>
+    <signal name="destroy" handler="on_window_destroy"/>
     <child>
-      <object class="GtkVBox" id="vbox1">
+      <object class="GtkVBox" id="vbox">
         <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="spacing">2</property>
+        <property name="orientation">vertical</property>
         <child>
-          <object class="GtkFileChooserButton" id="filechooserbutton2">
+          <object class="GtkHBox" id="hbox">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="spacing">1</property>
-            <property name="action">select-folder</property>
-            <property name="title" translatable="yes">选择文件夹</property>
+            <property name="spacing">5</property>
+            <child>
+              <object class="GtkFileChooserButton" id="filechooserbutton">
+                <property name="visible">True</property>
+                <property name="action">select-folder</property>
+                <property name="title" translatable="yes">&#x9009;&#x62E9;&#x6587;&#x4EF6;&#x5939;</property>
+              </object>
+              <packing>
+                <property name="padding">1</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="button">
+                <property name="label" translatable="yes">&#x4E0A;&#x4F20;</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+                <signal name="clicked" handler="on_button_clicked"/>
+              </object>
+              <packing>
+                <property name="padding">1</property>
+                <property name="pack_type">end</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
           </object>
           <packing>
-            <property name="expand">True</property>
-            <property name="fill">True</property>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
             <property name="position">0</property>
           </packing>
         </child>
         <child>
-          <placeholder/>
-        </child>
-        <child>
-          <object class="GtkScrolledWindow" id="scrolledwindow1">
+          <object class="GtkTextView" id="textview">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
-            <property name="hscrollbar_policy">automatic</property>
-            <property name="vscrollbar_policy">automatic</property>
-            <child>
-              <object class="GtkTextView" id="textview1">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-              </object>
-            </child>
+            <property name="editable">False</property>
+            <property name="cursor_visible">False</property>
           </object>
           <packing>
-            <property name="expand">True</property>
-            <property name="fill">True</property>
-            <property name="position">2</property>
+            <property name="position">1</property>
           </packing>
         </child>
         <child>
-          <object class="GtkProgressBar" id="progressbar1">
+          <object class="GtkProgressBar" id="progressbar">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
           </object>
           <packing>
-            <property name="expand">True</property>
-            <property name="fill">True</property>
-            <property name="position">3</property>
+            <property name="expand">False</property>
+            <property name="position">2</property>
           </packing>
         </child>
       </object>

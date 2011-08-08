@@ -78,6 +78,9 @@ class PatentParser():
                 files.append((i,one[i],file_content))
             elif i == 'classid':
                 fields.append((i,PatentParser.classIds[one[i]]))
+                #3333.4 => 3333;remove the point and last number
+            elif i == 'application_number' and one[i][-2] == '.':
+                fields.append((i,one[i][:-2]))
             else:
                 fields.append((i,one[i]))
         return fields,files
@@ -120,22 +123,34 @@ class Zhuanli88:
         opener=urllib2.build_opener(urllib2.HTTPCookieProcessor(self.cj))
         urllib2.install_opener(opener)
         req=urllib2.Request(path,body,headers)
-        conn=urllib2.urlopen(req)
-        out=conn.read()
-        if out[:3]==codecs.BOM_UTF8:
-            out=out[3:]
-            if sys.platform == "win32":
-                enc = 'gbk'
-            elif sys.platform == "linux2":
-                enc = 'utf8'
-            print unicode(out,"utf8").encode(enc)
+        tries=0
+        done=False
+        while done==False:
+            try:
+                conn=urllib2.urlopen(req)
+                out=conn.read()
+                done=True
+            except:
+                if(tries>2):
+                    print "[WARNING] upload %s failed!" % xml_file
+                    return 
+                tries+=1
+        # if out[:3]==codecs.BOM_UTF8:
+        #     out=out[3:]
+        #     if sys.platform == "win32":
+        #         enc = 'gbk'
+        #     elif sys.platform == "linux2":
+        #         enc = 'utf8'
+        #     print unicode(out,"utf8").encode(enc)
+        print xml_file
                                       
         
 if __name__=='__main__':
     x=Zhuanli88()
-    if x.login(uid='zhangdongmao',psw='89714942')==0:
+    if x.login(uid='zl88',psw='XXXX')==0:
         xmlfiles=glob.glob("*.xml")
         for f in xmlfiles:
             x.add_patent(f)
     else:
+        print "login failed"
         pass

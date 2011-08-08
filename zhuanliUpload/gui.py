@@ -1,12 +1,5 @@
 #!/usr/bin/env python
 
-# First run tutorial.glade through gtk-builder-convert with this command:
-# gtk-builder-convert tutorial.glade tutorial.xml
-# Then save this file as tutorial.py and make it executable using this command:
-# chmod a+x tutorial.py
-# And execute it:
-# ./tutorial.py
-
 import pygtk
 pygtk.require("2.0")
 import gtk
@@ -41,7 +34,7 @@ class UploadGui(object):
 		for index,filename in enumerate(xmlfiles):
 			self.zhuanli.add_patent(filename)
 			gobject.idle_add(self.updateGui,((index+1)/float(totalLenth),filename))
-#		gobject.idle_add(lambda 
+		gobject.idle_add(lambda :self.button.set_sensitive(True)) 
 	def updateGui(self,data):
 		fraction=data[0]
 		log=data[1]

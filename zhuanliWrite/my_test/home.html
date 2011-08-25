@@ -1,3 +1,24 @@
+
+<!-- <link href="media/css/bootstrap-1.0.0.min.css" rel="stylesheet"> -->
+<!-- <link href="media/css/docs.css" rel="stylesheet" > -->
+<!-- <script type="text/javascript" src="media/js/jquery/jquery-1.6.2.min.js"></script> -->
+<!-- <script type="text/javascript" src="media/js/my.js"></script> -->
+
+<script type="text/javascript">
+$(document).ready(function(){
+    var $sidebar=$('#sidebar li')
+    var $minicontent=$('#minicontent')
+      $sidebar.click(function(e)
+		   {
+		       var $this=$(this),
+		       $href=$this.find("a").attr("href");
+		       e.preventDefault()
+		       $minicontent.load($href);
+		   }
+		  )
+})
+
+</script>
 <div class="row">
   <div id="sidebar" class="span3 columns">
     <ol class="">
@@ -13,6 +34,9 @@
     </div>
     <div class="span6 columns">
       测试8
+      <p>
+	<a href="" class="btn">你好</a>
+      </p>
     </div>
   </div>
 </div>

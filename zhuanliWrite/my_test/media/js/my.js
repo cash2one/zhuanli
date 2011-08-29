@@ -1,7 +1,7 @@
 $(document).ready(function(){
     // Disable certain links in docs
     // =============================
-    $('ul.tabs a, ul.pills a, .pagination a, .well .btn, .actions .btn, .alert-message .btn, a.close ,ol a').click(function(e) {
+    $('ul.tabs a, ul.pills a, .pagination a, .well .btn, .actions .btn, .alert-message .btn, a.close ,#sidebar a').click(function(e) {
     	e.preventDefault();
     });
 
@@ -47,16 +47,6 @@ $(document).ready(function(){
 		     $content.load($href);
 		 }
 	       )
-    //load sidebar
-    $sidebar.click(function(e)
-		   {
-		       var $this=$(this),
-		       $href=$this.find("a").attr("href");
-		       console.log($href);
-		       console.log($this);
-		       $minicontent.load($href);
-		   }
-		  )
     
     
 });

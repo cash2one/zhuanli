@@ -4,40 +4,75 @@
 <!-- <script type="text/javascript" src="media/js/jquery/jquery-1.6.2.min.js"></script> -->
 <!-- <script type="text/javascript" src="media/js/my.js"></script> -->
 
+<!DOCTYPE html>
+<link href="media/css/bootstrap-1.0.0.min.css" rel="stylesheet">
+<link href="media/css/docs.css" rel="stylesheet" >
+<script type="text/javascript" src="media/js/jquery/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="media/js/my.js"></script>
 <script type="text/javascript">
-$(document).ready(function(){
-    var $sidebar=$('#sidebar li')
-    var $minicontent=$('#minicontent')
-      $sidebar.click(function(e)
-		   {
-		       var $this=$(this),
-		       $href=$this.find("a").attr("href");
-		       e.preventDefault()
-		       $minicontent.load($href);
-		   }
-		  )
-})
+  $(document).ready(function(){
+  var $sidebar=$('#sidebar li')
+  var $minicontent=$('#minicontent')
+  $sidebar.click(function(e)
+  {
+  var $this=$(this),
+  $href=$this.find("a").attr("href");
+  e.preventDefault()
+  $minicontent.load($href);
+  }
+  )
+  })
 
 </script>
 <div class="row">
-  <div id="sidebar" class="span3 columns">
+
+<div id="sidebar" class="span2 columns">
     <ol class="">
       <li><a href="preface.html">前言</a></li>
       <li><a href="introduction.html">说明书</a></li>
       <li><a href="final.html">后记</a></li>
-</ul>
+    </ol>
 </div>
-<div id="minicontent" class="span13 columns">
-  <div class="row">
-    <div class="span7 columns">
-      测试
-    </div>
-    <div class="span6 columns">
-      测试8
-      <p>
-	<a href="" class="btn">你好</a>
-      </p>
-    </div>
-  </div>
+
+<div id="minicontent" class="span14 columns">
+    <div class="row">
+	      <div class="span12 columns">
+		<form method="" id="" action="">
+		    <div class="clearfix">
+		      <label>输入阿速度</label>
+		      <div class="input">
+		      <input type="text" name="" value="" />
+		      </div>
+		    </div>
+
+
+		   <div class="clearfix">
+		     <label >Select</label>
+		     <div class="input">
+			<select>
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+			</select>
+		      </div>
+		   </div>
+		   <div class="actions">
+		    <button class="btn primary" type="submit">Save Changes</button>
+		<button class="btn" type="reset">Cancel</button>
+		   </div>
+		</form>
+	      </div>
+
+	      <!-- column help-->
+	      <div class="span2 columns">
+		<p>到一个地方看说明</p>
+		<a href="" class="btn primary">帮助</a>
+	      </div>
+	      <!-- end column help-->
+
+    </div><!--end minicontent row-->
+
 </div>
-</div><!--end minicontent row-->
+</div><!--end content row-->
